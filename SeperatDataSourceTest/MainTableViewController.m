@@ -8,23 +8,20 @@
 
 #import "MainTableViewController.h"
 #import "MyModel.h"
-#import "TableViewDataSource.h"
 #import "MyTableViewCell.h"
-
+#import "TableViewDataSource.h"
 static NSString * const cellIdentifier = @"myCell";
 @interface MainTableViewController ()<UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) NSArray *myModels;
-@property (strong, nonatomic) TableViewDataSource *dataSoures;
+
 @property (strong, nonatomic) IBOutlet UITableView *myTabelView;
-@end
+@property (strong, nonatomic) NSArray *myModels;
+@property (strong, nonatomic) TableViewDataSource *dataSoures;@end
 
 @implementation MainTableViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createMyDataArray];
     self.myModels = [self createMyDataArray];
-    
     
     //使用系统的UITableViewCell时
 //    TableViewCellConfigureBlock cellConfigureBlock = ^(UITableViewCell *cell, MyModel *item){
@@ -32,7 +29,6 @@ static NSString * const cellIdentifier = @"myCell";
 //        cell.detailTextLabel.text = item.age;
 //    };
 //    [self.myTabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellIdentifier];
-    
     
     //使用自定义cell时
     TableViewCellConfigureBlock cellConfigureBlock = ^(MyTableViewCell *cell, MyModel *item){
@@ -42,16 +38,12 @@ static NSString * const cellIdentifier = @"myCell";
     [self.myTabelView registerNib:[MyTableViewCell nib] forCellReuseIdentifier:cellIdentifier];
     self.dataSoures = [[TableViewDataSource alloc]initWithItems:self.myModels cellIdentifier:cellIdentifier configureCellBlock:cellConfigureBlock];
     self.myTabelView.dataSource = self.dataSoures;
-    
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 #pragma mark - createDataArray
 - (NSArray *)createMyDataArray{
     MyModel *jack = [[MyModel alloc]initWithName:@"jack" Age:@"20" Address:@"southStree 17" Identifier:@"1"];

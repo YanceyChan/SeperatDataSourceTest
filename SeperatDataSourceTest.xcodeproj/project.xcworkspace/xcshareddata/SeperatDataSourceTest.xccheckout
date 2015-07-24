@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>0699DD73-DE11-49EB-BBD9-F141C178DA4E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>SeperatDataSourceTest</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C12D23931A129A0FFD1401D65ABB7ACD1A1C0A80</key>
 		<string>https://github.com/YanceyChan/SeperatDataSourceTest.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SeperatDataSourceTest.xcodeproj</string>
+	<string>SeperatDataSourceTest.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C12D23931A129A0FFD1401D65ABB7ACD1A1C0A80</key>
