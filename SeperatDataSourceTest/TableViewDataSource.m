@@ -23,9 +23,9 @@
 - (instancetype)initWithItems:(NSArray *)anItems cellIdentifier:(NSString *)aCellIdentifier configureCellBlock:(TableViewCellConfigureBlock)configureBlock{
     self = [super init];
     if (self) {
-        self.cellIdentifier = aCellIdentifier;
-        self.items = anItems;
-        self.configureBlock = configureBlock;
+        _cellIdentifier = aCellIdentifier;
+        _items = anItems;
+        _configureBlock = configureBlock;
     }
     return self;
 }

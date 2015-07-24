@@ -7,11 +7,11 @@
 //
 
 #import "MyTableViewCell.h"
-
+#import "MyModel.h"
 @implementation MyTableViewCell
 + (UINib *)nib{
     //注意使用对应的nibName（xib文件名）
-    return [UINib nibWithNibName:@"MyTableViewCell" bundle:nil];
+    return [UINib nibWithNibName:NSStringFromClass([MyTableViewCell class]) bundle:nil];
 }
 - (void)awakeFromNib {
     // Initialization code
@@ -22,5 +22,17 @@
 
     // Configure the view for the selected state
 }
-
 @end
+
+
+
+@implementation MyTableViewCell (ConfigureCell)
+- (void)configureCellWithModel:(MyModel *)myModel{
+    self.nameLabel.text = myModel.name;
+    self.ageLabel.text = myModel.age;
+    self.addressLabel.text = myModel.address;
+    self.idLabel.text = myModel.identifier;
+}
+@end
+
+

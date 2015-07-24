@@ -36,10 +36,8 @@ static NSString * const cellIdentifier = @"myCell";
     
     //使用自定义cell时
     TableViewCellConfigureBlock cellConfigureBlock = ^(MyTableViewCell *cell, MyModel *item){
-        cell.nameLabel.text = item.name;
-        cell.ageLabel.text = item.age;
-        cell.addressLabel.text = item.address;
-        cell.idLabel.text = item.identifier;
+        //将item应用到cell上的方法
+        [cell configureCellWithModel:item];
     };
     [self.myTabelView registerNib:[MyTableViewCell nib] forCellReuseIdentifier:cellIdentifier];
     self.dataSoures = [[TableViewDataSource alloc]initWithItems:self.myModels cellIdentifier:cellIdentifier configureCellBlock:cellConfigureBlock];
