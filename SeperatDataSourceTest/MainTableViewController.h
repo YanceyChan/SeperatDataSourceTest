@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainTableViewController.h
 //  SeperatDataSourceTest
 //
 //  Created by YS_Chan on 15/7/24.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainTableViewController : UITableViewController
 
 @end
-
