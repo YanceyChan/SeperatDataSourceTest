@@ -15,7 +15,8 @@ static NSString * const cellIdentifier = @"myCell";
 
 @property (strong, nonatomic) IBOutlet UITableView *myTabelView;
 @property (strong, nonatomic) NSArray *myModels;
-@property (strong, nonatomic) TableViewDataSource *dataSoures;@end
+@property (strong, nonatomic) TableViewDataSource *dataSoures;
+@end
 
 @implementation MainTableViewController
 - (void)viewDidLoad {
