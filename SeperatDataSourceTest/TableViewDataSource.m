@@ -21,8 +21,7 @@
 }
 
 - (instancetype)initWithItems:(NSArray *)anItems cellIdentifier:(NSString *)aCellIdentifier configureCellBlock:(TableViewCellConfigureBlock)configureBlock{
-    self = [super init];
-    if (self) {
+    if (self = [super init]) {
         _cellIdentifier = aCellIdentifier;
         _items = anItems;
         _configureBlock = configureBlock;
@@ -39,8 +38,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
-//    /*⬇️使用系统UITableViewCell时，registerNib:这方法不用时，这段不加，崩溃⬇️*/
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+//    /*⬇️使用系统UITableViewCell时，registerNib:这方法不用时，这段不加，崩溃⬇️*/  因为没注册所以重用标识找不到要重用的cell
+//    xib创建的，只需要在xib协商reuseID，就不需要再注册cell了。
 //    if (!cell) {
 //        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:self.cellIdentifier];
 //    }

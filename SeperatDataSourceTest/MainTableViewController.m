@@ -22,7 +22,6 @@ static NSString * const cellIdentifier = @"myCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createMyDataArray];
-    self.myModels = [self createMyDataArray];
     
     //使用系统的UITableViewCell时
 //    TableViewCellConfigureBlock cellConfigureBlock = ^(UITableViewCell *cell, MyModel *item){
@@ -46,14 +45,13 @@ static NSString * const cellIdentifier = @"myCell";
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - createDataArray
-- (NSArray *)createMyDataArray{
+- (void)createMyDataArray{
     MyModel *jack = [[MyModel alloc]initWithName:@"jack" Age:@"20" Address:@"southStree 17" Identifier:@"1"];
     MyModel *jone = [[MyModel alloc]initWithName:@"jone" Age:@"21" Address:@"north 18" Identifier:@"2"];
     MyModel *may = [[MyModel alloc]initWithName:@"may" Age:@"19" Address:@"westStree 20" Identifier:@"3"];
     MyModel *tony = [[MyModel alloc]initWithName:@"tony" Age:@"18" Address:@"eastStreet" Identifier:@"4"];
     MyModel *marry = [[MyModel alloc]initWithName:@"marry" Age:@"20" Address:@"nononStreet" Identifier:@"5"];
-    NSArray *myModels = @[jack, jone, may, tony, marry];
-    return myModels;
+    self.myModels = @[jack, jone, may, tony, marry];
 }
 
 #pragma mark - UITableViewDelegate
